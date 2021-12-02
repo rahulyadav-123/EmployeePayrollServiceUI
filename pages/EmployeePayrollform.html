@@ -1,15 +1,18 @@
+<!--
+   Ability to reset the form on clicking reset
+-->
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/EmployeePayrollForm.css">
-
-    <script type="text/javascript" src="../js/fieldValidation.js"></script>
-    <script type="text/javascript" src="../js/EmployeePayrollData.js"></script>
     <title>Employee payroll form</title>
+    <script src="../js/fieldValidation.js"></script>
+    <script src="../js/EmployeePayrollData.js"></script>
 </head>
 
 <body>
@@ -22,8 +25,9 @@
             </div>
         </div>
     </header>
+    <br>
     <div class="form-content">
-        <form class="form" action="#" onsubmit="save()">
+        <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
             <div class="form-head">
                 Employee Payroll Form
             </div>
@@ -36,20 +40,23 @@
                 <label class="label text" for="profile">Profile Image</label>
                 <div class="profile-radio-content">
                     <label>
-                        <input type="radio" id="profile1" name="profile" value="../assets/profileimages/Ellipse -3.png" required>
-                        <img class="profile" id="image1" src="../assets/profileimages/Ellipse -1.png">
+                        <input type="radio" id="profile1" name="profile"
+                            value="../assets/profileimages/Ellipse -3.png">
+                        <img class="profile" id="image1" src="../assets/profileimages/Ellipse -3.png">
                     </label>
                     <label>
-                        <input type="radio" id="profile2" name="profile" value="../assets/profileimages/Ellipse 1.png" required>
-                        <img class="profile" id="image2" src="../assets/profileimages/Ellipse -3.png">
+                        <input type="radio" id="profile2" name="profile" value="../assets/profileimages/Ellipse 1.png">
+                        <img class="profile" id="image2" src="../assets/profileimages/Ellipse -1.png">
                     </label>
                     <label>
-                        <input type="radio" id="profile3" name="profile" value="../assets/profileimages/Ellipse -8.png" required>
-                        <img class="profile" id="image3" src="../assets/profileimages/Ellipse -7.png">
+                        <input type="radio" id="profile3" name="profile"
+                            value="../assets/profileimages/Ellipse -8.png">
+                        <img class="profile" id="image3" src="../assets/profileimages/Ellipse -8.png">
                     </label>
                     <label>
-                        <input type="radio" id="profile4" name="profile" value="../assets/profileimages/Ellipse -7.png" required>
-                        <img class="profile" id="image4" src="../assets/profileimages/Ellipse -9.png">
+                        <input type="radio" id="profile4" name="profile"
+                            value="../assets/profileimages/Ellipse -7.png">
+                        <img class="profile" id="image4" src="../assets/profileimages/Ellipse -7.png">
                     </label>
                 </div>
             </div>
@@ -79,12 +86,12 @@
             </div>
             <div class="row-content">
                 <label class="label text" for="salary">Choose Your Salary</label>
-                <input class="input" type="range" name="salary" id="salary" min="3000000" max="5000000" step="100" value="4000000">
+                <input class="input" type="range" name="salary" id="salary" min="300000" max="5000000" step="100" value="4000000" required>
                 <output class="salary-output" for="salary">4000000</output>
             </div>
             <div class="row-content">
                 <label class="label text" for="startDate">Start Date</label>
-                <div>
+                <div id="date">
                     <select id="day" name="Day">
                         <option value="Day">Day</option>
                         <option value='01'>01</option>
@@ -144,7 +151,7 @@
                         <option value='2016'>2016</option>
                     </select>
                 </div>
-                <error-output class="date-error" for="startDate"></error-output>
+                <error-output class="date-error" for="text"></error-output>
             </div>
             <div class="row-content">
                 <label class="label text" for="notes">Notes</label>
@@ -153,7 +160,7 @@
             <div class="buttonParent">
                 <a href="./home.html" class="resetButton button cancelButton">Cancel</a>
                 <div class="submit-reset">
-                    <button type="submit" class="button submitButton" id="submitButton" onclick="submitButton()">Submit</button>
+                    <button type="submit" class="button submitButton" id="submitButton">Submit</button>
                     <button type="reset" class="resetButton button" id="resetButton">Reset</button>
                 </div>
             </div>
