@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/EmployeePayrollForm.css">
+
+    <script type="text/javascript" src="../js/fieldValidation.js"></script>
+    <script type="text/javascript" src="../js/EmployeePayrollData.js"></script>
     <title>Employee payroll form</title>
 </head>
 
@@ -16,7 +19,7 @@
             <div>
                 <span class="emp-text">EMPLOYEE</span><br>
                 <span class="emp-text emp-payroll">PAYROLL</span><br>
-            </div><s></s>
+            </div>
         </div>
     </header>
     <div class="form-content">
@@ -38,7 +41,7 @@
                     </label>
                     <label>
                         <input type="radio" id="profile2" name="profile" value="../assets/profileimages/Ellipse 1.png" required>
-                        <img class="profile" id="image2" src="../assets/profileimages/Ellipse -2.png">
+                        <img class="profile" id="image2" src="../assets/profileimages/Ellipse -3.png">
                     </label>
                     <label>
                         <input type="radio" id="profile3" name="profile" value="../assets/profileimages/Ellipse -8.png" required>
@@ -133,6 +136,7 @@
                     </select>
                     <select id="year" name="Year">
                         <option value="Year">Year</option>
+                        <option value='2021'>2021</option>
                         <option value='2020'>2020</option>
                         <option value='2019'>2019</option>
                         <option value='2018'>2018</option>
@@ -140,6 +144,7 @@
                         <option value='2016'>2016</option>
                     </select>
                 </div>
+                <error-output class="date-error" for="startDate"></error-output>
             </div>
             <div class="row-content">
                 <label class="label text" for="notes">Notes</label>
@@ -154,9 +159,6 @@
             </div>
         </form>
     </div>
-
-    <script type="text/javascript" src="../js/fieldValidation.js"></script>
-    <script type="text/javascript" src="../js/EmployeePayrollData.js"></script>
 </body>
 
 </html>
