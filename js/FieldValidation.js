@@ -1,17 +1,7 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-
-    //salary range
-    const salary = document.querySelector('#salary');
-    const output = document.querySelector('.salary-output');
-    output.textContent = salary.value;
-    salary.addEventListener('input', function() {
-        output.textContent = salary.value;
-    });
-
-    //name validation
     const name = document.querySelector('#name');
     const textError = document.querySelector('.text-error');
-    name.addEventListener('input', function() {
+    name.addEventListener('input', function () {
         if (name.value.length == 0) {
             textError.textContent = "";
             return;
@@ -23,7 +13,28 @@ window.addEventListener('DOMContentLoaded', (event) => {
             textError.textContent = e;
         }
     });
+
+    const salary = document.querySelector('#salary');
+    const output = document.querySelector('.salary-output');
+    output.textContent = salary.value;
+    salary.addEventListener('input', function () {
+        output.textContent = salary.value;
+    });
+
+    const date = document.querySelector('#date');
+    date.addEventListener('input', function () {
+        const startDate = Date.parse(getInputValueById('#day') + " " +
+            getInputValueById('#month') + " " +
+            getInputValueById('#year'));
+        try {
+            (new EmployeePayrollData()).start_date = startDate;
+            setTextValue('.date-error', "");
+        } catch (e) {
+            setTextValue('.date-error', e);
+        }
+    });
 });
+
 const save = () => {
     try {
         let employeePayrollData = createEmployeePayroll();
